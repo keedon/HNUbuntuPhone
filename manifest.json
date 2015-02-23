@@ -1,0 +1,15 @@
+{
+    "name": "hackernews.keithpoole",
+    "description": "description of HackerNews",
+    "architecture": "all",
+    "title": "HackerNews",
+    "hooks": {
+        "hackernews": {
+            "apparmor": "hackernews.apparmor",
+            "desktop": "hackernews.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Keith Poole <keith.poole@gmail.com>",
+    "framework": "ubuntu-sdk-14.10"
+}
