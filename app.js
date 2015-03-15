@@ -55,9 +55,14 @@ function displayArticle(index) {
 
 function displayComments() {
     commentStack.length = 0;
-    commentStack.push(currentArticle.kids.slice(0));
     currentIndent = 0;
     commentModel.clear();
+    if (currentArticle.kids === undefined) {
+        commentModel.append({"comment": "No comments", "cmtLevel": 0});
+        return;
+    }
+
+    commentStack.push(currentArticle.kids.slice(0));
     loadComments();
     pageStack.push(articleComments);
 }
@@ -82,7 +87,7 @@ function loadComments() {
 function kidLoaded(comment) {
     comment.cmtLevel = currentIndent;
     console.log(JSON.stringify(comment));
-    commentModel.append({"comment": comment.text, "cmtLevel": currentIndent * 3});
+    commentModel.append({"comment": comment.text + "\n", "cmtLevel": currentIndent * 3});
     console.log(JSON.stringify(commentModel));
     if (comment.kids !== undefined &&
             comment.kids.length > 0) {

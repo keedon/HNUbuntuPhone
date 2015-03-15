@@ -136,6 +136,7 @@ MainView {
                         textFormat: TextEdit.RichText
                         text: comment
                         autoSize: true
+                        maximumLineCount: 0
                         width: parent.width - units.gu(cmtLevel)
                         anchors.right: parent.right
                     }
