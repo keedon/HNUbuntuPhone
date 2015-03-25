@@ -87,7 +87,7 @@ function loadComments() {
 function kidLoaded(comment) {
     comment.cmtLevel = currentIndent;
     console.log(JSON.stringify(comment));
-    commentModel.append({"comment": comment.text + "\n", "cmtLevel": currentIndent * 3});
+    commentModel.append({"comment": comment.text + "<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
     console.log(JSON.stringify(commentModel));
     if (comment.kids !== undefined &&
             comment.kids.length > 0) {

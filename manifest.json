@@ -11,5 +11,5 @@
     },
     "version": "0.1",
     "maintainer": "Keith Poole <keith.poole@gmail.com>",
-    "framework": "ubuntu-sdk-14.10"
+    "framework": "ubuntu-sdk-14.10-qml"
 }

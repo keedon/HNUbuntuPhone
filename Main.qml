@@ -117,33 +117,27 @@ MainView {
                 id: commentModel
             }
 
-            ColumnLayout {
-                spacing: units.gu(1)
+            UbuntuListView {
+                id: commentView
                 anchors {
                     margins: units.gu(2)
                     fill: parent
                 }
 
-                UbuntuListView {
-                    id: commentView
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-
-                    model: commentModel
-                    highlightFollowsCurrentItem: true
-                    delegate: TextArea {
-                        readOnly: true
-                        textFormat: TextEdit.RichText
-                        text: comment
-                        autoSize: true
-                        maximumLineCount: 0
-                        width: parent.width - units.gu(cmtLevel)
-                        anchors.right: parent.right
-                    }
-                    width: parent.width
+                model: commentModel
+                highlightFollowsCurrentItem: true
+                delegate: TextArea {
+                    readOnly: true
+                    textFormat: TextEdit.RichText
+                    text: comment
+                    autoSize: true
+                    maximumLineCount: 0
+                    width: parent.width - units.gu(cmtLevel)
+                    anchors.right: parent.right
                 }
-                focus: true
+                width: parent.width
             }
+            focus: true
         }
     }
 }

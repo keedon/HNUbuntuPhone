@@ -12,7 +12,7 @@ from testtools.matchers import Equals
 from ubuntuuitoolkit import base
 
 
-PACKAGE_ID = 'hackernews.keithpoole'
+PACKAGE_ID = 'hackernews.keef'
 
 
 def get_path_to_source_root():
