@@ -9,7 +9,7 @@
             "desktop": "hackernews.desktop"
         }
     },
-    "version": "0.1",
+    "version": "0.2",
     "maintainer": "Keith Poole <keith.poole@gmail.com>",
     "framework": "ubuntu-sdk-14.10-qml"
 }
