@@ -34,8 +34,8 @@ function getJson(url, callback) {
     var http = new XMLHttpRequest()
     http.open("GET", url, true);
     http.onreadystatechange = function() {
-        if (http.readyState == 4) {
-            if (http.status == 200) {
+        if (http.readyState === 4) {
+            if (http.status === 200) {
                 callback(JSON.parse(http.responseText));
             } else {
                 console.log("error: " + http.status);
@@ -47,7 +47,6 @@ function getJson(url, callback) {
 
 function displayArticle(index) {
     currentArticle = commentsArray[index];
-    console.log(JSON.stringify(currentArticle));
     articleWebView.url = currentArticle.url;
     articlePage.title = currentArticle.title;
     pageStack.push(articlePage);
@@ -87,7 +86,11 @@ function loadComments() {
 function kidLoaded(comment) {
     comment.cmtLevel = currentIndent;
     console.log(JSON.stringify(comment));
-    commentModel.append({"comment": comment.text + "<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
+    if (comment.deleted) {
+        commentModel.append({"comment": "[deleted]<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
+    } else {
+        commentModel.append({"comment": comment.text + "<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
+    }
     console.log(JSON.stringify(commentModel));
     if (comment.kids !== undefined &&
             comment.kids.length > 0) {
@@ -97,3 +100,7 @@ function kidLoaded(comment) {
     }
     loadComments();
 };
+
+function followLink(link) {
+    console.log(link);
+}

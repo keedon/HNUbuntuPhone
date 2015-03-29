@@ -126,14 +126,14 @@ MainView {
 
                 model: commentModel
                 highlightFollowsCurrentItem: true
-                delegate: TextArea {
-                    readOnly: true
-                    textFormat: TextEdit.RichText
+                delegate: Text {
+                    wrapMode: Text.Wrap
+                    textFormat: Text.RichText
                     text: comment
-                    autoSize: true
                     maximumLineCount: 0
                     width: parent.width - units.gu(cmtLevel)
                     anchors.right: parent.right
+                    onLinkActivated:  Qt.openUrlExternally(link)
                 }
                 width: parent.width
             }
