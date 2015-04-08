@@ -89,7 +89,8 @@ function kidLoaded(comment) {
     if (comment.deleted) {
         commentModel.append({"comment": "[deleted]<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
     } else {
-        commentModel.append({"comment": comment.text + "<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
+        commentModel.append({"comment": "<small><b>" + comment.by + "</b></small> " +
+                                        comment.text + "<br/>&nbsp;<br/>", "cmtLevel": currentIndent * 3});
     }
     console.log(JSON.stringify(commentModel));
     if (comment.kids !== undefined &&

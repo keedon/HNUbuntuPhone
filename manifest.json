@@ -1,6 +1,6 @@
 {
     "name": "hackernews.keithpoole",
-    "description": "description of HackerNews",
+    "description": "Hacker News browser",
     "architecture": "all",
     "title": "HackerNews",
     "hooks": {
@@ -9,7 +9,7 @@
             "desktop": "hackernews.desktop"
         }
     },
-    "version": "0.2",
+    "version": "0.3",
     "maintainer": "Keith Poole <keith.poole@gmail.com>",
     "framework": "ubuntu-sdk-14.10-qml"
 }
